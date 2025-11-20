@@ -1,0 +1,24 @@
+{
+  "name": "spacelab_metaverse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "handlebars": "^4.7.8",
+    "sass": "^1.93.3",
+    "vite": "^7.2.2",
+    "vite-plugin-handlebars": "^2.0.0"
+  },
+  "dependencies": {
+    "swiper": "^12.0.3"
+  }
+}

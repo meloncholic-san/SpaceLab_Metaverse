@@ -1,0 +1,231 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+.main-roadmap {
+    background-color: #090812;
+    color: variables.$color-main-white;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    min-height: 2432px;
+
+    &__head {
+      &-wrapper {
+        text-align: center;
+        max-width: 365px;
+        margin: 220px auto 95px;
+      }
+      &-headline {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 20px;
+        line-height: 1.4em;
+        margin-left: 70px;
+        margin-bottom: 15px;
+      }
+      &-title {
+        font-family: variables.$font-family-second;
+        font-weight: variables.$font-weight-bold;
+        font-size: 45px;
+        line-height: 1.09em;
+        margin-left: 70px;
+      }
+    }
+    &__title {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-bold;
+    font-size: 22px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    letter-spacing: -0.09px;
+    }
+    &__content {
+          &-wrapper {
+            display: flex;
+            flex-direction: column;
+          }
+        max-width: 500px;
+          &:nth-child(1) {
+          margin-left: 17.1%;
+          margin-right: auto;
+          }
+          &:nth-child(2) {
+          margin-top: 92px;
+          margin-left: auto;
+          margin-right: 17.1%;
+            .main-roadmap__title {
+            max-width: 280px;
+            margin-left: 11px;
+            }
+            .main-roadmap__list-item {
+            margin-left: 43px;
+            padding-left: 0;
+            }
+            .main-roadmap__list-item::before {
+              left: -30px;
+            }
+            .main-roadmap__list-item::after {
+              left: -26px;
+            }
+            .main-roadmap__sidelist-item {
+              padding-left: 35px;
+            }
+            .main-roadmap__morebtn {
+              margin-left: 114px;
+            }
+          }
+          &:nth-child(3) {
+          margin-top: 31px;
+          margin-right: auto;
+          margin-left: 15.9%;
+          }
+          &:nth-child(4) {
+          margin-left: auto;
+          margin-right: 11%;
+          margin-top: 230px;
+          max-width: 515px;
+            .main-roadmap__title {
+              margin-bottom: 25px;
+            }
+          }
+    }
+    &__list {
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-regular;
+    font-size: 18px;
+    line-height: 1.4em;
+    letter-spacing: 0.01em;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &-item {
+      position: relative;
+      padding-left: 38px;
+      font-family: variables.$font-family-main;
+      letter-spacing: -0.09px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border: 0.4px solid #FFFFFF;
+            transform: rotate(45deg);
+            opacity: 0.8;
+            }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 11px;
+            top: 9px;
+            width: 7px;
+            height: 7px;
+            background-color: #FFFFFF;
+            transform: rotate(45deg);
+            opacity: 0.2;
+        }
+        }
+    }
+
+   &__sidelist {
+    list-style: none;
+    padding-left: 0;
+    &-item {
+      position: relative;
+      padding-left: 28px;
+      margin-top: 1px;
+      font-size: 0.95em;
+      opacity: 0.9;
+      letter-spacing: 0.41px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 11px;
+        height: 3px;
+        width: 2px;
+        background-color: white;
+      }
+    }
+  }
+
+  &__morebtn {
+    font-family: variables.$font-family-second;
+    font-weight: variables.$font-weight-bold;
+    font-size: 18px;
+    line-height: 1.45em;
+    display: flex;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity .25s ease;
+    color: white;
+    margin-left: 125px;
+    margin-top: 22px;
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &-text {
+      display: inline-block;
+    }
+
+    &-icon {
+      width: 14px;
+      height: 14px;
+      border-right: 3px solid variables.$color-main-white;
+      border-bottom: 3px solid variables.$color-main-white;
+      transform: rotate(45deg);
+      transition: transform .3s ease;
+      margin-top: 4px;
+    }
+
+    &.is-open {
+      & .main-roadmap__more-icon {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
+
+.roadmap-lines {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-height: 1600px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+  .line-purple-1 {
+    height: 1550px;
+    left: 49.9%;
+    top: 29%;
+    opacity: 1;
+  }
+}
+
+.line {
+    position: absolute;
+    left: 53%;
+    top: 41%;
+    // transform: scaleX(1.5) scaleY(1.3) translateX(-50%);
+    transform: translateX(-50%);
+    height: 1550px;
+    opacity: 0;
+}
+
+.flow {
+  fill: none;
+  stroke-dasharray: 1 17;
+  stroke-linecap: square;
+  animation: flow 6s linear infinite;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+
+}

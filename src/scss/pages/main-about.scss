@@ -1,0 +1,269 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+.main-about {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+        @include respond-to(xs) {
+            flex-direction: column-reverse;
+            background-color: #01001F;
+        }
+    &__wrapper {
+    width: 100%;
+    padding: 301px 140px 217px;
+        @include respond-to(md) {
+            padding: 200px 80px 200px;
+            padding-right: 20px;
+        }
+        @include respond-to(xs) {
+            padding: 71px 47px 144px;
+            padding-right: 0px;
+        }
+        &::before {
+        content: '';
+        position: absolute;
+        border-left: 6px solid #56FFEB;
+        top: 243px;
+        left: 144px;
+        height: 56.4%;
+            @include respond-to(md) {
+            top: 190px;
+            left: 44px;
+            }
+            @include respond-to(xs) {
+            height: 49.3%;
+            top: 440px;
+            left: 23px;
+            }
+        }
+        &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        inset: 0;
+        height: 56%;
+        top: 244px;
+        left: 150px;
+        opacity: 0.4;
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 19px,rgba(160, 52, 217, 0.3411764706) 20px, rgba(160, 52, 217, 0.3411764706) 21px);
+        mask: linear-gradient(90deg, black 0%, transparent 40%);
+        -webkit-mask: linear-gradient(90deg, black 0%, transparent 40%);
+            @include respond-to(md) {
+            top: 185px;
+            left: 50px;
+            }
+        }
+    }
+
+    & {
+        &__swiper {
+        position: relative;
+        z-index: 2;
+        color: variables.$color-main-white;
+        // max-width: 612px;
+
+        margin-left: 0 !important;   
+            &-slide {
+                padding-left: 66px;
+                    @include respond-to(md) {
+                        padding-left: 0;
+                        padding-right: 20px;
+                    }
+            }
+        }
+    }
+    &__content {
+        &-title {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 20px;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        margin-bottom: 13px;
+        margin-top: 10px;
+        margin-left: 5px;
+            @include respond-to(md) {
+                font-size: 18px;
+            }
+            @include respond-to(xs) {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+        }
+        &-headline {
+        font-family: variables.$font-family-second;
+        font-weight: variables.$font-weight-bold;
+        font-size: 45px;
+        line-height: 1.09em;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+        margin-left: 6px;
+            @include respond-to(md) {
+                font-size: 38px;
+            }
+            @include respond-to(xs) {
+                font-size: 28px;
+                margin-bottom: 48px;
+            }
+        }
+        &-phrase {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 20px;
+        line-height: 1.6em;
+        max-width: 612px;
+        margin-bottom: 67px;
+        letter-spacing: -0.3px;
+            @include respond-to(md) {
+                font-size: 16px;
+                max-width: 512px;
+                margin-bottom: 37px;
+            }
+            @include respond-to(xs) {
+                margin-left: 6px;
+                line-height: 1.64em;
+                margin-bottom: 48px;
+            }
+        }
+    }
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: -1;
+            @include respond-to(xs) {
+                position: relative;
+                height: 374px;
+                z-index: 1;
+            }
+            &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 25%;
+                @include respond-to(xs) {
+                    object-position: 80% 25%;
+                }
+    }
+    }
+
+
+
+    &__progressbar {
+    position: relative;
+    height: 1px !important;
+    background: rgba(255,255,255,0.4) !important;
+    top: unset !important;
+    bottom: 49px;
+    left: 81px !important;
+    width: 100%;
+    overflow: visible;
+    max-width: 390px;
+        @include respond-to(md) {
+            bottom: 50px;
+            left: 16px !important;
+        }
+        @include respond-to(xs) {
+            bottom: 45px;
+            left: 18px !important;
+        }
+    .swiper-pagination-progressbar-fill {
+        background: #7F5CFF !important;
+        height: 4px !important;
+        transform-origin: left;
+        top: -1px !important;
+    }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #7F5CFF;
+            background: #0C0021;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 4px solid #7F5CFF;
+            transform: translate(-50%, -50%) scale(0.7);
+            transition: transform 4s linear;
+            z-index: 4;
+        }
+
+        &.is-active::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        &__slides {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 69px;
+            font-family: variables.$font-family-second;
+            font-weight: variables.$font-weight-bold;
+            font-size: 18px;
+            line-height: 1.45em;
+            text-transform: uppercase;
+            max-width: 403px;
+            margin-top: 37px;
+            letter-spacing: -0.2px;
+                @include respond-to(md) {
+                    margin-top: 10px;
+                    margin-left: 5px;
+                }
+                @include respond-to(xs) {
+                    font-size: 16px;
+                    margin-top: 8px;
+                    margin-left: 5px;
+                }
+        }
+        &__current-slide {
+            @include respond-to(xs) {
+                display: flex;
+                gap: 12px;
+            }
+        }
+        &__next-slide {
+            @include respond-to(xs) {
+                display: none;
+            }
+        }
+    }
+
+
+    &__blur {
+        &-blue {
+            inset: 0;
+            top: -330px;
+            position: absolute;
+                @include respond-to(xs) {
+                    display: none;
+                }
+        }
+        &-pink {
+            position: absolute;
+            right: 0;
+                @include respond-to(xs) {
+                right: -180px;
+                top: 240px;
+                transform: scale(0.6);
+                }
+        }
+    }
+}

@@ -1,0 +1,211 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.main-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 15.1 / 8;
+    overflow: hidden;
+      @include respond-to(sm) {
+        aspect-ratio: unset;
+      }
+    &__wrapper {
+        padding: 0 140px;
+          @include respond-to(lg) {
+            padding: 0 80px;
+          }
+          @include respond-to(md) {
+            padding: 0 20px;
+          }
+          @include respond-to(sm) {
+            padding: 100px 10px;
+          }
+          @include respond-to(xs) {
+            padding: 214px 5px;
+            padding-bottom: 241px;
+          }
+    }
+    &__content {
+    position: relative;
+    z-index: 2;
+    padding-left: 66px;
+      @include respond-to(md) {
+        padding-left: 40px;
+      }
+      @include respond-to(sm) {
+        padding-left: 38px;
+      }
+        &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        height: 110%;
+        inset: 0;
+        top: -40px;
+        left: -53px;
+        z-index: -1;
+        opacity: 0.4;
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 18px, 
+        rgba(160, 52, 217, 0.3411764706) 19px, rgba(160, 52, 217, 0.3411764706) 20px);
+        mask: linear-gradient(90deg, black 0%, transparent 70%);
+        -webkit-mask: linear-gradient(90deg, black 0%, transparent 70%);
+          @include respond-to(sm) {
+          height: 115%;
+          top: -35px;
+          }
+        }
+        &::before {
+        content: '';
+        position: absolute;
+        border-left: 6px solid #7F5CFF;
+        top: -16px;
+        left: 5px;
+        height: 103%;
+          @include respond-to(xs) {
+            top: -17px;
+            left: 13px;
+            height: 107.4%;
+          }
+        }
+      &-headline {
+      font-family: variables.$font-family-main;
+      font-weight: variables.$font-weight-regular;
+      font-size: 20px;
+      line-height: 1.4em;
+      text-transform: uppercase;
+      color: variables.$color-main-white;
+      margin-top: 17px;
+      margin-bottom: 8px;
+      letter-spacing: 0.4px;
+        @include respond-to(lg) {
+          font-size: 18px;
+        }
+        @include respond-to(md) {
+          font-size: 16px;
+          letter-spacing: 0.3px;
+          margin-bottom: 18px;
+        }
+      }
+      &-phrase {
+      font-family: variables.$font-family-second;
+      font-weight: variables.$font-weight-bold;
+      font-size: 48px;
+      line-height: 1.4em;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: variables.$color-main-white;
+      max-width: 753px;
+      margin-bottom: 69px;
+        @include respond-to(lg) {
+            margin-bottom: 38px;
+        }
+        @include respond-to(md) {
+            max-width: 586px;
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
+        @include respond-to(sm) {
+          font-size: 26px;
+          max-width: 376px;
+          line-height: 1.3em;
+        }
+        &__span {
+        position: relative;
+        margin-left: -11px;
+            @include respond-to(sm) {
+              display: none;
+            }
+          &.mobile {
+            display: none;
+              @include respond-to(sm) {
+              display: inline-block;
+              }
+          }
+          @include respond-to(sm) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    
+    &-background {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        // height: 56vw;
+        inset: 0;
+        object-fit: cover;
+        // object-position: 30% 50%;
+        object-position: 30% 0%;
+        filter: brightness(1.1);
+          @include respond-to(sm) {
+              object-position: 33.6% 60%;
+          }
+    }
+    &__icon-star {
+      width: 46px;
+      height: 46px;
+      position: relative;
+      top: 5px;
+        @include respond-to(sm) {
+        width: 32px;
+        height: 32px;
+        top: 6px;
+        left: -3px;
+        }
+    }
+    &__button {
+      margin-bottom: 19px;
+        @include respond-to(sm) {
+            margin-bottom: 32px;
+        }
+    }
+    &__blur-purple {
+    position: absolute;
+    z-index: 1;
+    // bottom: -275px;
+    // left: 0px;
+    // width: 610px;
+    bottom: -190px;//якщо треба горинтальне положення
+    left: 0px;
+    transform: rotate(270deg);
+      @include respond-to(lg) {
+        bottom: -400px;
+        left: -130px;
+        transform: scale(0.7);
+      }
+    }
+    &__blur-elipse-pink {
+    position: absolute;
+    z-index: 1;
+    right: -130px;
+    bottom: -322px;
+    opacity: 0.6;
+    transform: rotate(45deg);
+      @include respond-to(lg) {
+          transform: scale(0.7) rotate(45deg);
+          right: -330px;
+          bottom: -512px;
+      }
+      @include respond-to(sm) {
+        opacity: 0;
+      }
+    }
+    &__blur-elipse-blue {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+      @include respond-to(lg) {
+      top: -205px;
+      left: -205px;
+      transform: scale(0.6);
+      }
+    }
+}

@@ -1,0 +1,22 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+.invest-button {
+    padding: 17px 49px;
+    cursor: pointer;
+    font-family: variables.$font-family-second;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.45em;
+    letter-spacing: -1px;
+    color: variables.$color-main-white;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: 
+    linear-gradient(99deg, #7a42f4 0%, #4642f4 100%) padding-box, 
+    linear-gradient(98.56deg, rgba(255, 255, 255, 0.56) 17.9%, rgba(255, 255, 255, 0) 66.11%) border-box;
+        @include respond-to(sm) {
+            padding: 12px 43px;
+            letter-spacing: -1.9px;
+        }
+}
