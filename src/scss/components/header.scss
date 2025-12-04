@@ -1,0 +1,134 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.015) 0%, rgba(0, 0, 0, 0.738) 40%);
+
+    &__wrapper {
+        padding: 40px 144px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+            @include respond-to(lg) {
+                padding: 40px 96px;
+            }
+            @include respond-to(md) {
+                padding: 40px 40px;
+            }
+            @include respond-to(sm) {
+                padding: 40px 20px;
+            }
+    }
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        gap: 45px;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-medium;
+        font-size: 20px;
+        line-height: 1.4em;
+        letter-spacing: 0%;
+        @include respond-to(lg) {
+            font-size: 18px;
+            gap: 35px;
+        }
+        @include respond-to(md) {
+            font-size: 16px;
+            gap: 20px;
+        }
+        @include respond-to(sm) {
+            display: none;
+        }
+        &__link {
+                position: relative;
+                text-decoration: none;        
+                color: variables.$color-main-white;
+                &.active::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    width: 30px;
+                    height: 2px;
+                    background: linear-gradient(90deg, #00DBDE, #00DBDE);
+                    border-radius: 2px;
+                }
+            }
+    }
+
+
+    &__menu {
+        &__button {
+            &-open {
+                position: relative;
+                width: 32px;
+                height: 16px;
+                margin-top: 6px;
+                background-color: transparent;
+                transform: rotateY(180deg);
+                caret-color: transparent;
+                display: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    @include respond-to(sm) {
+                        display: block;
+                    }
+                &::before,
+                &::after, 
+                span {
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: white;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 80%;
+                    height: 2px;
+                    background-color: white;
+                }
+                span {
+                    width: 58%;
+                    height: 2px;
+                    background-color: white;
+                    display: block;
+                }
+                    &.open {
+                        &::before {
+                            top: 50%;
+                            width: 100%;
+                            transform: translateY(-50%) rotate(45deg);
+                        }
+
+                        &::after {
+                            bottom: 50%;
+                            width: 100%;
+                            transform: translateY(50%) rotate(-45deg);
+                        }
+
+                        span {
+                            opacity: 0;
+                        }
+                }
+            }
+        }
+    }
+    &__icon-logo {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+    }
+}

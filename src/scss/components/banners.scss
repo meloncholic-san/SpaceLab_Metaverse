@@ -1,0 +1,141 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+@keyframes moveBanner {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+.main-banners {
+  position: relative;
+  top: -227px;
+  &__banner-big {
+    width: 100vw;
+    height: 640px;
+    position: absolute;
+    overflow: hidden;
+    background: transparent;
+    top: -140px;
+      @include respond-from(xl) {
+          height: 800px;
+      }
+    &__outer {
+    position: absolute;
+    width: 200vw;
+    left: -50vw;
+    top: 160px;
+    transform: rotate(-9deg);
+      @include respond-from(xl) {
+        top: 200px;
+      }
+      @include respond-to(sm) {
+        top: 175px;
+      }
+    }
+    &__inner {
+    white-space: nowrap;
+    display: inline-flex;
+    animation: moveBanner 30s linear infinite;
+    font-size: 200px;
+    font-family: variables.$font-family-second;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
+    color: white;
+      @include respond-to(sm) {
+        font-size: 52px;
+      }
+    }
+    &-background {
+    position: absolute;
+    width: 170vw;
+    height: 286px;
+    top: 0;
+    z-index: -3;
+      @include respond-to(sm) {
+        height: 76px;
+      }
+      &-lines {
+      position: absolute;
+      z-index: -2;
+      width: 152vw;
+      height: 226px;
+      top: 3px;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      @include respond-to(sm) {
+        height: 76px;
+      }
+      }
+    }
+  }
+
+  &__banner-small {
+    width: 100vw;
+    height: 640px;
+    position: absolute;
+    overflow: hidden;
+    background: transparent;
+    top: 120px;
+      @include respond-to(sm) {
+          top: 0px;
+      }
+    &__outer {
+    position: absolute;
+    width: 200vw;
+    left: -50vw;
+    top: 220px;
+    transform: rotate(-9deg);
+    background-color: black;
+      @include respond-to(sm) {
+        top: 120px;
+      }
+      @include respond-from(xl) {
+        top: 260px;
+      }
+    }
+    &__inner {
+    white-space: nowrap;
+    display: inline-flex;
+    animation: moveBanner 30s linear infinite;
+    font-family: variables.$font-family-second;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
+    font-size: 72px;
+      @include respond-to(sm) {
+        font-size: 18px;
+      }
+      p {
+      background: linear-gradient(90deg, #21FCFF 0%, #FD40FF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding-right: 20px;
+        @include respond-to(sm) {
+          padding-right: 10px;
+        }
+      }
+    }
+    &__span {
+      display: inline-block;
+      width: fit-content;
+      position: relative;
+      left: 4px;
+        @include respond-to(sm) {
+          left: 0;
+        }
+    }
+    &__icon-star {
+      width: 46px;
+      height: 46px;
+        @include respond-to(sm) {
+          width: 12px;
+          height: 12px;
+        }
+    }
+  }
+}

@@ -43,3 +43,6 @@ textarea {
 *, *::before, *::after {
   box-sizing: border-box;
 }
+html, body {
+    overscroll-behavior: none;
+}

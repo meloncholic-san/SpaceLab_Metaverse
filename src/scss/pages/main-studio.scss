@@ -1,0 +1,152 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.main-studio {
+    background-color: #090812;
+    padding-top: 196px;
+    padding-bottom: 200px;
+    position: relative;
+    z-index: -5;
+    overflow: hidden;
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 1675px;    
+        position: relative;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 60px;
+        max-width: 1118px;
+        margin-left: auto;
+        backdrop-filter: blur(15px);
+            @include respond-to(md) {
+                padding: 17px 49px;
+            }
+            @include respond-to(xs) {
+                padding: 17px 39px;
+                max-width: 370px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        height: 109%;
+        inset: 0;
+        top: -15px;
+        right: 20px;
+        z-index: 1;
+        opacity: 0.4;
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 18px, 
+        #A034D957 19px, #A034D957 20px);
+        mask: linear-gradient(270deg, black 0%, transparent 70%);
+        -webkit-mask: linear-gradient(270deg, black 0%, transparent 70%);
+          @include respond-to(sm) {
+        height: 100%;
+        background: 
+        repeating-linear-gradient(to left, transparent 0px, transparent 18px, 
+        #A034D957 19px, #A034D957 20px);
+        mask: linear-gradient(0deg, black 0%, transparent 70%);
+        -webkit-mask: linear-gradient(0deg, black 0%, transparent 70%);
+          }
+        }
+        &::before {
+        content: '';
+        position: absolute;
+        border-right: 6px solid #7F5CFF;
+        top: 0px;
+        right: 14px;
+        height: 100%;
+          @include respond-to(sm) {
+            top: unset;
+            bottom: 13px;
+            border-right: unset;
+            left: 18px;
+            width: 90%;
+            height: unset;
+            border-bottom: 6px solid #7F5CFF;
+          }
+        }
+        &-pt1 {
+        padding-left: 170px;
+        padding: 70px 0;
+            @include respond-to(sm) {
+            padding: 76px 0;
+            padding-bottom: 75px;
+            }
+        }
+        &-pt2 {
+        padding: 70px 0;
+        padding-right: 88px;
+            @include respond-to(md) {
+                display: none;
+            }
+        }
+        &-title {
+        color: white;
+        font-family: variables.$font-family-second;
+        font-weight: variables.$font-weight-bold;
+        font-size: 45px;
+        line-height: 1.43em;
+        text-transform: uppercase;
+        max-width: 400px;
+            @include respond-to(md) {
+                font-size: 28px;
+            }
+        }
+        &-phrase {
+        color: white;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 20px;
+        line-height: 1.6em;
+        max-width: 470px;
+        margin-top: -19px;
+        letter-spacing: -0.19px;
+            &.mobile {
+                display: none;
+                @include respond-to(md) {
+                    display: block;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+
+    &__icon-star {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        bottom: -18px;
+        left: 55.6%;
+            @include respond-to(sm) {
+            top: -197px;
+            left: 60%;
+            bottom: unset;
+            }
+    }
+
+    &__image-container {
+    position: absolute;
+    left: 0;
+    top: 82px;
+    z-index: -1;
+        @include respond-to(xs) {
+        left: -219px;
+        width: 552px;
+        top: 46px;
+        }
+    }
+    &__image {
+        width: 100%;
+    }
+}

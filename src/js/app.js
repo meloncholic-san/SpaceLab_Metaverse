@@ -1,9 +1,13 @@
 import '@scss/styles.scss';
 import { initAbout } from './pages/main/init-about';
+import { initHeader } from './components/init-header';
+import { initBrands } from './pages/main/init-brands';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+initHeader();
 initAbout();
+initBrands();
 });
 
 

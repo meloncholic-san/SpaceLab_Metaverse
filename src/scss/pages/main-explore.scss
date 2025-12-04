@@ -1,0 +1,210 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.main-explore {
+    position: relative;
+    background-color: #090812;
+    padding-top: 560px;
+    padding-bottom: 280px;
+    z-index: -5;
+    overflow: hidden;
+        @include respond-to(lg) {
+            padding-top: 220px;
+            padding-bottom: 680px;
+        }
+        @include respond-to(md) {
+            padding-top: 400px;
+            padding-bottom: 550px;
+        }
+        @include respond-to(sm) {
+            padding-top: 113px;
+            padding-bottom: 600px;
+        }
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 1675px;    
+        position: relative;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: 85px;
+        padding: 0 25px;
+            @include respond-to(md) {
+                justify-content: center;
+                gap: 0;
+            }
+        &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        height: 198%;
+        inset: 0;
+        top: -113px;
+        left: 23px;
+        z-index: 1;
+        opacity: 0.4;
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 18px, 
+        #A034D957 19px, #A034D957 20px);
+        mask: linear-gradient(90deg, black 0%, transparent 70%);
+        -webkit-mask: linear-gradient(90deg, black 0%, transparent 70%);
+          @include respond-to(md) {
+            height: 158%;
+            top: -53px;
+            width: 110%;
+            left: 15px;
+            background: 
+            repeating-linear-gradient(to left, transparent 0px, transparent 18px, 
+            #A034D957 19px, #A034D957 20px);
+            mask: linear-gradient(90deg, black 0%, transparent 100%);
+            -webkit-mask: linear-gradient(90deg, black 0%, transparent 100%);
+          }
+        }
+        &::before {
+        content: '';
+        position: absolute;
+        border-left: 6px solid #7F5CFF;
+        top: -98px;
+        left: 20px;
+        height: 186%;
+          @include respond-to(md) {
+            top: -53px;
+            left: 21px;
+            width: 90%;
+            height: unset;
+            border-top: 6px solid #7F5CFF;
+            border-left: unset;
+          }
+        }
+        &-pt1 {
+            padding-left: 90px;
+                @include respond-to(md) {
+                padding-left: 17px;
+                position: relative;
+                }
+        }
+        &-pt2 {
+            p {
+            margin-top: -12px;
+                @include respond-to(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__title {
+    color: white;
+    font-family: variables.$font-family-second;
+    font-weight: variables.$font-weight-bold;
+    font-size: 45px;
+    line-height: 1.09em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+        @include respond-to(md) {
+            font-size: 28px;
+            margin-bottom: 26px;
+        }
+    }
+    &__phrase {
+    color: white;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-regular;
+    font-size: 20px;
+    line-height: 1.6em;
+    max-width: 397px;
+    letter-spacing: -0.39px;
+        @include respond-to(md) {
+            font-size: 16px;
+            margin-left: -2px;
+        }
+        &.mobile {
+            display: none;
+                @include respond-to(md) {
+                display: block;
+                margin-top: 16px;
+                max-width: 320px;
+                }
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+            &-container {
+            position: absolute;
+            right: 100px;
+            top: -324px;
+            content: "";
+            max-width: 457px;
+            width: 23.8vw;
+            height: fit-content;
+            z-index: 5;
+                @include respond-to(lg) {
+                right: unset;
+                top: 403px;
+                content: "";
+                max-width: 263px;
+                width: unset;
+                left: 32.6%;
+                transform: translate(-26%, -5px);
+                }
+            }
+
+    }
+    &__lava-blob {
+    position: absolute;
+    left: -30px;
+    top: 23px;
+    z-index: -2;
+    width: 29.6vw;
+    height: 42vh;
+        @include respond-to(md) {
+        position: absolute;
+        left: 10%;
+        top: 0px;
+        z-index: -2;
+        width: 330px;
+        height: 310px;
+        transform: translate(-14%, 1%);
+        }
+    }
+
+    &__icon-star {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    bottom: -138px;
+    left: 449px;
+        @include respond-to(md) {
+        bottom: 31px;
+        left: 268px;
+        }
+    }
+
+    &__blur {
+        &-pink {
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        top: 0;
+            @include respond-to(sm) {
+            left: -390px;
+            top: -330px;
+            }
+        }
+        &-blue {
+        position: absolute;
+        z-index: 100;
+        left: 600px;
+        top: 0;
+            @include respond-to(sm) {
+            left: -290px;
+            top: 230px;
+            }
+        }
+    }
+}

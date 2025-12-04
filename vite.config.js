@@ -3,6 +3,7 @@ import handlebars from 'vite-plugin-handlebars'
 import path from 'path'
 
 export default defineConfig({
+  base: './',
   root: './src',
    resolve: {
     alias: {

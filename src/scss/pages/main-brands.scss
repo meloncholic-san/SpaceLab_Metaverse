@@ -1,0 +1,206 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.main-brands {
+    // background-image: url("../../img/main/brands/main-brands-background.webp");
+    z-index: 1;
+    background: linear-gradient(-90deg, #100529 0%, #19083f 100%);
+    position: relative;
+    overflow: hidden;
+        &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        height: 110%;
+        inset: 0;
+        top: -40px;
+        left: -53px;
+        z-index: -3;
+        opacity: 0.4;
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 18px, 
+        rgba(255, 255, 255, 0.1) 19px, rgba(255, 255, 255, 0.1) 20px);
+          @include respond-to(sm) {
+          height: 115%;
+          top: -35px;
+          }
+        }
+    &__wrapper {
+        padding: 112px 140px 130px;
+            @include respond-to(sm) {
+                padding: 78px 10px 130px;
+            }
+    }
+    &__headline {
+        color: variables.$color-main-white;
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 20px;
+        line-height: 1.4em;
+        text-align: center;
+        margin-bottom: 24px;
+            @include respond-to(sm) {
+                font-size: 16px;
+                margin-bottom: 18px;
+            }
+    }
+    &__title {
+        color: variables.$color-main-white;
+        font-family: variables.$font-family-second;
+        font-weight: variables.$font-weight-bold;
+        font-size: 45px;
+        line-height: 1.1em;
+        text-align: center;
+        text-transform: uppercase;
+        text-align: center;
+            @include respond-to(sm) {
+                font-size: 28px;
+            }
+    }
+    &__gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 94px;
+        padding: 0 140px;
+        margin-top: 90px;
+            @include respond-to(lg) {
+                gap: 28px;
+            }
+            @include respond-to(md) {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 15px;
+                margin-top: 73px;
+                gap: 43px;
+            }
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 385px;
+        &-img-wrapper {
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 69px;
+            position: relative;
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            caret-color: transparent;
+                @include respond-to(sm) {
+                    margin-bottom: 50px;
+                }
+        }
+        // &-img {
+        //     display: block;
+        //     width: 100%;
+        //     height: auto;
+        // }`
+        &-icon-star {
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            left: 47%;
+            top: -2%;
+        }
+        &-blur {
+            &-pink {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            filter: blur(147px);
+            transform: translate(5%, -64%);
+                @include respond-to(md) {
+                    transform: translate(-45%, 12%);
+                }
+                @include respond-to(xs) {
+                    transform: translate(-52%, 29%);
+                }
+            }
+            &-green {
+            position: absolute;
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-87%, -61%);
+                @include respond-to(md) {
+                    transform: translate(-43%, -152%);
+                }
+                @include respond-to(xs) {
+                    transform: translate(-41%, -150%);
+                }
+            }
+            &-blue {
+            position: absolute;
+            z-index: -1;
+            filter: blur(131px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-36%, -62%);
+                @include respond-to(md) {
+                    transform: translate(-38%, -60%);
+                }
+            }
+        }
+        &-content {
+            position: relative;
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 6px;
+                background-color: #06D6DF;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background: linear-gradient(179.28deg, rgba(56, 219, 255, 0.14) 0.58%, rgba(56, 219, 255, 0) 42.57%);
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                left: 0;
+                z-index: 0;
+            }
+        }
+        &:nth-child(2) .main-brands__card-content::before {
+            background-color: #7B71EE;
+        }
+
+        &:nth-child(3) .main-brands__card-content::before {
+            background-color: #F00AFE;
+        }
+        &-title {
+            color: variables.$color-main-white;
+            font-family: variables.$font-family-second;
+            font-weight: variables.$font-weight-bold;
+            font-size: 16px;
+            line-height: 1.4em;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 52px;
+            margin-bottom: 7px;
+                @include respond-to(sm) {
+                margin-top: 31px;
+                margin-bottom: 15px;
+                letter-spacing: 0.17px;
+                }
+        }
+        &-phrase {
+            color: variables.$color-main-white;
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-light;
+            font-size: 18px;
+            line-height: 1.6em;
+            letter-spacing: 0.01em;
+            text-align: center;
+            opacity: 0.6;
+            letter-spacing: -0.29px;
+        }
+    }
+}

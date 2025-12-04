@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metaverse</title>
+
 </head>
 <body>
 
   <main>
+    {{> components/header  }}
     {{> pages/main/main-hero }}
     {{> pages/main/main-about }}
     {{> pages/main/main-roadmap }}
+    {{> pages/main/main-brands }}
+    {{> pages/main/main-resources }}
+    {{> components/banners }}
+    {{> pages/main/main-game }}
+    {{> pages/main/main-explore }}
+    {{> pages/main/main-studio }}
+
   </main>
   <script src="./js/app.js" type="module" defer></script>
 
@@ -18,6 +27,9 @@
 <defs>
 <symbol id="icon-Star" viewBox="0 0 32 32">
 <path fill="#fff" style="fill: var(--color1, #fff)" d="M16 0l2.263 13.737 13.737 2.263-13.737 2.263-2.263 13.737-2.263-13.737-13.737-2.263 13.737-2.263 2.263-13.737z"></path>
+</symbol>
+<symbol id="icon-Logo" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.4286" d="M3.333 3.333l25.333 25.333v-15.682l-9.651-9.651v25.333h-15.682v-25.333z"></path>
 </symbol>
 </defs>
 </svg>

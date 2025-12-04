@@ -1,0 +1,61 @@
+<section class="main-explore">
+    <div class="main-explore__wrapper">
+        <div class="main-explore__content">
+            <div class="main-explore__content-pt1">
+                <h2 class="main-explore__title">Explore Now</h2>
+                <p class="main-explore__phrase">Each human will control his/her own digital identity in the Crafty Metaverse space.</p>
+                <p class="main-explore__phrase mobile">A virtual marketplace to allow the users to trade and stake our $CMETA token and their NFTs. Negotiate with the digital avatars of other users to sell your NFTs at the best prices and generate passive income while playing.</p>
+                {{> components/invest-button label="Invest Now" className="main-explore__button" }}
+                <svg class="main-explore__icon-star"><use href="#icon-Star"></use></svg>
+            </div>
+
+            <div class="main-explore__content-pt2">
+                <p class="main-explore__phrase">A virtual marketplace to allow the users to trade and stake our $CMETA token and their NFTs. Negotiate with the digital avatars of other users to sell your NFTs at the best prices and generate passive income while playing.</p>
+            </div>
+        </div>
+        <div class="main-explore__image-container">
+            <img class="main-explore__image" src="/img/main/explore/main-explore-image.webp" alt="space background" loading="lazy">
+            <svg class="main-explore__lava-blob" width="571" height="508" viewBox="0 0 571 508" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                @keyframes lavaGlow {
+                0%, 100% { filter: brightness(1); }
+                33% { filter: brightness(1.2); }
+                66% { filter: brightness(1.1); }
+                }
+                .lava-blob {
+                animation: lavaGlow 10s infinite ease-in-out;
+                }
+            </style>
+            
+            <defs>
+                <linearGradient id="lavaGradient" gradientUnits="userSpaceOnUse">
+                <animate attributeName="x1" values="0;100;0" dur="8s" repeatCount="indefinite"/>
+                <animate attributeName="y1" values="0;50;0" dur="6s" repeatCount="indefinite"/>
+                <animate attributeName="x2" values="100;0;100" dur="10s" repeatCount="indefinite"/>
+                <animate attributeName="y2" values="100;50;100" dur="7s" repeatCount="indefinite"/>
+                
+                <stop offset="0%" stop-color="#7A42F4">
+                    <animate attributeName="stop-color" 
+                            values="#7A42F4;#FF42A6;#42F4E8;#7A42F4" 
+                            dur="5s" repeatCount="indefinite"/>
+                </stop>
+                <stop offset="100%" stop-color="#4642F4">
+                    <animate attributeName="stop-color" 
+                            values="#4642F4;#C2185B;#F442B3;#4642F4" 
+                            dur="5s" repeatCount="indefinite" begin="1s"/>
+                </stop>
+                </linearGradient>
+            </defs>
+            
+            <path class="lava-blob"
+                    d="M251.494 48.6578C197.04 139.17 136.76 148.692 113.427 142.139C-70.9844 114.857 1.08732 317.467 113.427 333.114C163.926 340.148 140.944 497.61 379.424 506.436C617.903 515.263 601.489 368.421 496.25 303.024C462.434 282.01 421.906 205.931 462.457 126.492C503.008 47.053 319.562 -64.4829 251.494 48.6578Z" 
+                    fill="url(#lavaGradient)" 
+                    stroke="rgba(0,0,0,0.3)" 
+                    stroke-width="1.10058"/>
+            </svg>
+        </div>
+    </div>
+
+    <img class="main-explore__blur-pink" src="/img/main/explore/main-explore-blur-pink.webp" alt="background purple" loading="lazy">
+    <img class="main-explore__blur-blue" src="/img/main/explore/main-explore-blur-blue.webp" alt="background purple" loading="lazy">
+</section>

@@ -3,6 +3,7 @@
 
 .invest-button {
     padding: 17px 49px;
+    width: fit-content;
     cursor: pointer;
     font-family: variables.$font-family-second;
     font-weight: 900;
@@ -18,5 +19,46 @@
         @include respond-to(sm) {
             padding: 12px 43px;
             letter-spacing: -1.9px;
+        }
+}
+
+.main-recources__button {
+    margin-top: 71px;
+    // margin-left: 52px;
+    padding: 17px 28px;
+        @include respond-to(lg) {
+        margin-top: 28px;
+        padding: 17px 35px;
+        }
+}
+
+.main-game__button {
+    margin-left: 12px;
+    letter-spacing: -2.6px;
+    padding: 14px 41px;
+        @include respond-to(sm) {
+            margin-left: 0px;
+            margin-bottom: 40px;
+        }
+}
+
+.main-explore__button {
+    margin-left: 0;
+    margin-top: 40px;
+    padding: 15px 36px;
+    letter-spacing: -2.4px;
+        @include respond-to(lg) {
+        margin-left: -2px;
+        margin-top: 37px;
+        padding: 15px 38px;
+        }
+}
+
+.main-studio__button {
+    margin-top: 34px;
+    letter-spacing: -2.09px;
+    padding: 17px 58px;
+        @include respond-to(sm) {
+            margin-top: 25px;
         }
 }
