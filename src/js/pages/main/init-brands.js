@@ -1,40 +1,45 @@
 export function initBrands() {
     const cards = document.querySelectorAll('.main-brands__card-img-wrapper');
     const isTouch = 'ontouchstart' in window;
-    cards.forEach(card => {
-
-    if (!isTouch) {
-        card.addEventListener('mousemove', e => {
-            handleTilt(card, e.clientX, e.clientY);
-        });
-
-        card.addEventListener('mouseleave', () => {
-            resetTilt(card);
-        });
-    }
-
-    let rect = null;
-    if (isTouch) {
-
-        card.addEventListener('touchstart', e => {
-            rect = card.getBoundingClientRect();
-            const touch = e.touches[0];
-            handleTilt(card, touch.clientX, touch.clientY);
-        });
-
-        card.addEventListener('touchmove', e => {
-            const touch = e.touches[0];
-            handleTilt(card, touch.clientX, touch.clientY);
-        });
-
-        card.addEventListener('touchend', () => {
-            resetTilt(card);
-        });
-    }
     
+    let activeCard = null;
+    
+    cards.forEach(card => {
+        if (!isTouch) {
+            card.addEventListener('mousemove', e => {
+                handleTilt(card, e.clientX, e.clientY);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                resetTilt(card);
+            });
+        }
+        
+        if (isTouch) {
+            card.addEventListener('touchstart', e => {
+                e.stopPropagation();
+                
+                if (activeCard) {
+                    resetTilt(activeCard);
+                }
+
+                activeCard = card;
+                const touch = e.touches[0];
+                handleTilt(card, touch.clientX, touch.clientY);
+            });
+
+            card.addEventListener('touchmove', e => {
+                if (card === activeCard) {
+                    const touch = e.touches[0];
+                    handleTilt(card, touch.clientX, touch.clientY);
+                }
+            });
+
+            card.addEventListener('touchend', () => {
+            });
+        }
     });
-
-
+    
 
     function handleTilt(card, clientX, clientY) {
         const rect = card.getBoundingClientRect();
@@ -44,7 +49,6 @@ export function initBrands() {
         const centerY = rect.height / 2;
 
         const maxTilt = 10;
-
         const rotateX = ((y - centerY) / centerY) * maxTilt;
         const rotateY = ((x - centerX) / centerX) * maxTilt;
 

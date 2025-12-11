@@ -11,6 +11,7 @@
 
     &__wrapper {
         padding: 40px 144px;
+        padding-right: 140px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -27,7 +28,8 @@
     &__nav {
         display: flex;
         flex-direction: row;
-        gap: 45px;
+        gap: 44px;
+        margin-top: 7px;
         font-family: variables.$font-family-main;
         font-weight: variables.$font-weight-medium;
         font-size: 20px;

@@ -23,9 +23,10 @@
 }
 
 .main-recources__button {
-    margin-top: 71px;
-    // margin-left: 52px;
-    padding: 17px 28px;
+    margin-top: 70px;
+    margin-left: 49px;
+    padding: 17px 31px;
+    font-size: 17.4px;
         @include respond-to(lg) {
         margin-top: 28px;
         padding: 17px 35px;
@@ -33,9 +34,10 @@
 }
 
 .main-game__button {
-    margin-left: 12px;
-    letter-spacing: -2.6px;
-    padding: 14px 41px;
+    margin-left: 8px;
+    letter-spacing: -2px;
+    font-size: 17.6px;
+    padding: 16px 39px;
         @include respond-to(sm) {
             margin-left: 0px;
             margin-bottom: 40px;
@@ -43,9 +45,9 @@
 }
 
 .main-explore__button {
-    margin-left: 0;
-    margin-top: 40px;
-    padding: 15px 36px;
+    margin-left: -4px;
+    margin-top: 42px;
+    padding: 15px 40px;
     letter-spacing: -2.4px;
         @include respond-to(lg) {
         margin-left: -2px;

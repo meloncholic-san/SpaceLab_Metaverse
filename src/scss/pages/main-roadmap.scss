@@ -98,7 +98,7 @@
               padding-left: 35px;
             }
             .main-roadmap__morebtn {
-              margin-left: 114px;
+                margin-left: 110px;
                 @include respond-to(sm) {
                   margin-left: 13px;
                   font-size: 15px;
@@ -208,7 +208,7 @@
     cursor: pointer;
     transition: opacity .25s ease;
     color: white;
-    margin-left: 125px;
+    margin-left: 127px;
     margin-top: 22px;
       @include respond-to(sm) {
         font-size: 15px;
@@ -224,13 +224,14 @@
     }
 
     &-icon {
-      width: 14px;
-      height: 14px;
-      border-right: 3px solid variables.$color-main-white;
-      border-bottom: 3px solid variables.$color-main-white;
+      width: 11px;
+      height: 11px;
+      border-right: 2px solid #FFFFFF;
+      border-bottom: 2px solid #FFFFFF;
       transform: rotate(45deg);
-      transition: transform .3s ease;
+      transition: transform 0.3s ease;
       margin-top: 4px;
+    margin-left: 1px;
         @include respond-to(sm) {
           width: 11px;
           height: 11px;

@@ -8,7 +8,7 @@
             padding: 76px 240px 340px;
         }
         @include respond-to(xl) {
-            padding: 76px 140px 387px;
+            padding: 85px 140px 387px;
         }
         @include respond-to(l) {
             padding: 76px 40px 360px;
@@ -94,9 +94,9 @@
         content: '';
         position: absolute;
         border-left: 6px solid #BF3AFF;
-        top: 102px;
-        left: 5px;
-        height: 86%;
+        top: 100px;
+        left: 0px;
+        height: 89%;
           @include respond-to(sm) {
             top: 145px;
             left: 23px;
