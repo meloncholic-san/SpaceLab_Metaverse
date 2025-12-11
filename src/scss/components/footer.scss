@@ -1,0 +1,74 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+        @include respond-to(md) {
+            display: none;
+        }
+    &__wrapper {
+        padding: 0 75px;
+        display: flex;
+        align-items: center;
+        gap: 432px;
+    }
+
+    &__left {
+        p {
+        font-family: variables.$font-family-main;
+        font-weight: variables.$font-weight-regular;
+        font-size: 18px;
+        line-height: 1.4em;
+        color: white;
+        margin-top: 37px;
+        letter-spacing: -0.19px;
+        }
+    }
+
+    &__center {
+        &-content {
+            p {
+            font-family: variables.$font-family-main;
+            font-weight: variables.$font-weight-medium;
+            font-size: 18px;
+            line-height: 1.4;
+            text-align: center;
+            color: white;
+            padding: 61px 70px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: none;
+            letter-spacing: 0.11px;
+            text-transform: uppercase;
+            }
+        }
+    }
+    &__icon-star {
+        width: 58px;
+        height: 58px;
+    }
+
+    &__blur-green {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    }
+    &__blur-blue {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    z-index: -1;
+    }
+    &__blur-pink {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    }
+}

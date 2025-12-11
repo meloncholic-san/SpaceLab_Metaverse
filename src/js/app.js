@@ -2,12 +2,18 @@ import '@scss/styles.scss';
 import { initAbout } from './pages/main/init-about';
 import { initHeader } from './components/init-header';
 import { initBrands } from './pages/main/init-brands';
+import { initTeam } from './pages/main/init-team';
+import { initFAQ } from './pages/main/init-faq';
+import { initMainMedia } from './pages/main/init-media';
 
 
 document.addEventListener("DOMContentLoaded", () => {
 initHeader();
 initAbout();
 initBrands();
+initTeam();
+initFAQ();
+initMainMedia();
 });
 
 

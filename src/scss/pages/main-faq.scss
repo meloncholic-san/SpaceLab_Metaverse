@@ -1,0 +1,344 @@
+@use "@scss/utils/variables";
+@use '@scss/utils/mixins' as *;
+
+
+.main-faq {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 40px 20px;
+    padding-top: 235px;
+    background-color: black;
+    z-index: 3;
+    margin-bottom: -1px;
+        @include respond-to(sm) {
+        padding-top: 40px;
+        }
+}
+
+.faq__title {
+    color: white;
+    font-family: variables.$font-family-second;
+    font-weight: variables.$font-weight-bold;
+    font-size: 45px;
+    line-height: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -71px;
+    margin-bottom: 45px;
+        @include respond-to(sm) {
+            font-size: 28px;
+            margin-left: 0px;
+            margin-bottom: 29px;
+        }
+}
+.main-faq__headline {
+    color: white;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-regular;
+    font-size: 20px;
+    line-height: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    margin-left: -82px;
+        @include respond-to(sm) {
+            font-size: 16px;
+            margin-left: -8px;
+        }
+}
+
+.main-faq__wrapper {
+    position: relative;
+    padding: 4px;
+    max-width: 1344px;
+    margin: 0 auto;
+    background: linear-gradient(340deg, rgba(58, 78, 255, 0.05) 0%, rgba(204, 0, 255, 0.7) 100%);
+        clip-path: polygon(
+        65px 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 55px
+    );
+        @include respond-to(sm) {
+            padding: 2px;
+            clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
+        }
+}
+.main-faq__content {
+        padding: 96px 39px;
+        padding-left: 89px;
+        padding-bottom: 77px;
+        clip-path: polygon(
+        65px 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 55px
+    );
+    background: #090812;
+
+    @include respond-to(sm) {
+        padding: 61px 12px;
+        padding-bottom: 40px;
+        clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
+    }
+
+        &::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        height: 100%;
+        inset: 0;
+        top: 8px;
+        left: 0px;
+        z-index: -1;
+        opacity: 0.4;
+        
+        background: 
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 35px, 
+        rgba(160, 52, 217, 0.3411764706) 36px, rgba(160, 52, 217, 0.3411764706) 37px);
+        mask: linear-gradient(90deg, black 0%, transparent 70%);
+        -webkit-mask: linear-gradient(90deg, black 0%, transparent 70%);
+          @include respond-to(sm) {
+          height: 115%;
+          top: -35px;
+          }
+        }
+}
+
+.faq__item {
+    overflow: hidden;
+}
+.faq__item.active {
+    margin-bottom: 13px;
+        @include respond-to(sm) {
+            margin-bottom: -3px;
+        }
+}
+
+.faq__question::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    width: 99.3%;
+    left: 8px;
+    border-bottom: 1px solid #FFFFFF80;
+    transition: all 0.3s ease;
+        @include respond-to(sm) {
+        width: 100%;
+        left: -8px;
+        }
+}
+
+.faq__question {
+    position: relative;
+    padding-top: 41px;
+    padding-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+        @include respond-to(sm) {
+            padding-bottom: 25px;
+            padding-top: 22px;
+        }
+}
+
+.faq__question span:first-child {
+    font-family: variables.$font-family-second;
+    font-weight: variables.$font-weight-bold;
+    font-size: 30px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    color: white;
+        @include respond-to(sm) {
+        font-size: 16px;
+        max-width: 250px;
+    }
+}
+
+.faq__toggle {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    margin-top: 8px;
+    margin-right: 14px;
+    transition: transform 0.3s ease;
+        @include respond-to(sm) {
+            width: 16px;
+            height: 16px;
+            margin-top: -24px;
+            margin-right: 13px;
+        }
+        &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        top: 45%;
+        background: white;
+            @include respond-to(sm) {
+            width: 16px;
+            height: 2px;
+            top: 45%;
+            left: 4px;
+            }
+        }
+        &::before {
+        position: absolute;
+        content: "";
+        left: 45%;
+        display: block;
+        width: 4px;
+        height: 100%;
+        background: white;
+            @include respond-to(sm) {
+            left: 70%;
+            width: 2px;
+            height: 16px;
+            }
+        }
+}
+
+.faq__answer {
+    max-height: 0;
+    padding-left: 10px;
+    overflow: hidden;
+    transition: 
+        max-height 0.5s ease,
+        padding 0.4s ease;
+}
+
+.faq__answer p {
+    letter-spacing: -0.59px;
+    font-family: variables.$font-family-main;
+    font-weight: variables.$font-weight-light;
+    font-size: 24px;
+    line-height: 1.6em;
+    color: white;
+        @include respond-to(sm) {
+        font-size: 16px;
+        letter-spacing: -0.29px;
+        }
+}
+
+.main-faq__blur-green {
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.main-faq__blur-pink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.faq__item.active .faq__toggle {
+    transform: rotate(45deg);
+}
+
+.faq__item.active .faq__answer {
+    max-height: 500px;
+    padding-top: 21px;
+    padding-left: 10px;
+    padding-bottom: 41px;
+    letter-spacing: -0.59px;
+        @include respond-to(sm) {
+        padding-left: 3px;
+        letter-spacing: -0.29px;
+        padding-bottom: 0px;
+        }
+}
+
+.faq__answer p {
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 
+        opacity 0.3s ease 0.1s,
+        transform 0.3s ease 0.1s;
+}
+
+.faq__item.active .faq__answer p {
+    opacity: 0.7;
+    transform: translateY(0);
+}
+
+
+.main-faq__roadlines {
+            position: absolute;
+            top: 220px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
+            z-index: -10;
+                & .line {
+                position: absolute;
+                left: 50%;
+                top: 10%;
+                height: auto;
+                transform: translateX(-50%);
+                }
+
+                & .main-faq-line-1 {
+                    top: -50%;
+                }
+                & .main-faq-line-2 {
+                    top: -52%;
+                }
+                & .main-faq-line-3 {
+                    top: -54%;
+                }
+    }
+
+
+
+
+    
+.main-faq__banner {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    .main-banners__banner-small {
+    width: 100%;
+    height: 540px;
+    position: absolute;
+    overflow: hidden;
+    background: transparent;
+    top: -220px;
+        @include respond-to(sm) {
+            top: -231px;
+        }
+    }
+    .main-banners__banner-small__outer {
+    top: 142px;
+    transform: rotate(6deg);
+    }
+
+    .main-banners__banner-small__inner {
+        @include respond-to(sm) {
+            font-size: 32px;
+        }
+    }
+
+    .main-banners__banner-small__icon-star {
+        @include respond-to(sm) {
+            height: 21px;
+            width: 21px;
+        }
+    }
+}
