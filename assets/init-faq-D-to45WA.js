@@ -1,0 +1,1 @@
+function i(){const s=document.querySelectorAll(".faq__item");s.forEach(e=>{const t=e.querySelector(".faq__question");e.querySelector(".faq__answer"),t.addEventListener("click",()=>{const a=e.classList.contains("active");s.forEach(c=>{c!==e&&c.classList.remove("active")}),a?e.classList.remove("active"):e.classList.add("active")})})}export{i as initFAQ};

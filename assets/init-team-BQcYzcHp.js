@@ -1,0 +1,1 @@
+function i(){const t=document.querySelectorAll(".main-team__person");t.forEach(e=>{e.addEventListener("click",()=>{t.forEach(c=>{c!==e&&c.classList.remove("active")}),e.classList.toggle("active")})})}export{i as initTeam};
