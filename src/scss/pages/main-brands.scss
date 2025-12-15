@@ -30,7 +30,7 @@
     &__wrapper {
         padding: 106px 140px 138px;
             @include respond-to(sm) {
-                padding: 78px 10px 130px;
+                padding: 78px 10px 75px;
             }
     }
     &__headline {
@@ -171,9 +171,18 @@
         &:nth-child(2) .main-brands__card-content::before {
             background-color: #7B71EE;
         }
-
+        &:nth-child(2) .main-brands__card-img-wrapper {
+            @include respond-to(sm) {
+                margin-bottom: 67px;
+            }
+        }
         &:nth-child(3) .main-brands__card-content::before {
             background-color: #F00AFE;
+        }
+        &:nth-child(3) .main-brands__card-img-wrapper {
+            @include respond-to(sm) {
+                margin-bottom: 64px;
+            }
         }
         &-title {
             color: variables.$color-main-white;

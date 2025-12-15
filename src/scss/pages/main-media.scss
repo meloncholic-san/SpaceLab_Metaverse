@@ -10,7 +10,7 @@
     z-index: 0;
         @include respond-to(sm) {
             padding-top: 63px;
-            padding-bottom: 233px;
+            padding-bottom: 123px;
         }
     &__wrapper {
         padding: 0 140px;
@@ -112,8 +112,8 @@
     top: -250px;
     z-index: -6;
         @include respond-to(md) {
-            right: -300px;
-            top: -400px;
+        right: 0;
+        top: 0px;
         }
     }
 }

@@ -171,9 +171,9 @@
     // bottom: -275px;
     // left: 0px;
     // width: 610px;
-    bottom: -190px;//якщо треба горинтальне положення
+    bottom: 0;
     left: 0px;
-    transform: rotate(270deg);
+    transform: rotate(270deg) translate(-25%, -10%);
       @include respond-to(lg) {
         bottom: -400px;
         left: -130px;
@@ -183,15 +183,9 @@
     &__blur-elipse-pink {
     position: absolute;
     z-index: 1;
-    right: -130px;
-    bottom: -322px;
+    right: 0;
+    bottom: 0px;
     opacity: 0.6;
-    transform: rotate(45deg);
-      @include respond-to(lg) {
-          transform: scale(0.7) rotate(45deg);
-          right: -330px;
-          bottom: -512px;
-      }
       @include respond-to(sm) {
         opacity: 0;
       }

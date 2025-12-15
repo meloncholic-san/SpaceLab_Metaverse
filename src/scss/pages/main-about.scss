@@ -142,7 +142,7 @@
                 height: 374px;
                 z-index: 1;
             }
-            &-img {
+            img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -250,7 +250,7 @@
     &__blur {
         &-blue {
             inset: 0;
-            top: -330px;
+            top: 0;
             position: absolute;
                 @include respond-to(xs) {
                     display: none;
@@ -260,9 +260,9 @@
             position: absolute;
             right: 0;
                 @include respond-to(xs) {
-                right: -180px;
+                right: 0;
                 top: 240px;
-                transform: scale(0.6);
+                transform: scale(0.6) translateX(35%);
                 }
         }
     }

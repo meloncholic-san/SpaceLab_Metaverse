@@ -31,6 +31,13 @@
         margin-top: 28px;
         padding: 17px 35px;
         }
+
+        @include respond-to(sm) {
+        margin-top: 28px;
+        padding: 17px 34px;
+        letter-spacing: -1.1px;
+        margin-left: -4px;
+        }
 }
 
 .main-game__button {
