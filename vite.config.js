@@ -5,6 +5,7 @@ import path from 'path'
 export default defineConfig({
   base: './',
   root: './src',
+  publicDir: '../public', 
    resolve: {
     alias: {
       '@scss': path.resolve(__dirname, 'src/scss'),
@@ -27,7 +28,8 @@ export default defineConfig({
     }
   ],
   build: {
-    outDir: '../dist'
+    outDir: '../dist',
+    emptyOutDir: true,
   },
   server: {
     open: true
